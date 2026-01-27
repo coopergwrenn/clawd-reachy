@@ -1,0 +1,99 @@
+{
+  "creators": [
+    {
+      "name": "The Miner Family",
+      "platform": "TikTok",
+      "handle": "@theminerfamily",
+      "followers": 144000,
+      "niche": ["Lifestyle", "Relationships"],
+      "email": "theminerfamily99@gmail.com",
+      "priority": "High",
+      "notes": "Couple UGC creators, trusted by 100+ brands. High-quality scroll-stopping content."
+    },
+    {
+      "name": "Lindsay Mysior",
+      "platform": "TikTok",
+      "handle": "@lindsaysjournal",
+      "followers": 50000,
+      "niche": ["Stationery", "Lifestyle"],
+      "priority": "High",
+      "notes": "Journaling/stationery creator. High-energy storytelling with nostalgic aesthetic. PERFECT for handwritten cards."
+    },
+    {
+      "name": "Journaling Dan",
+      "platform": "TikTok/Substack",
+      "handle": "@journalingdan",
+      "followers": 25000,
+      "niche": ["Stationery", "Pen Pals"],
+      "priority": "High",
+      "notes": "Stationery influencer, pen pal enthusiast. Writes about snail mail. IDEAL niche match!"
+    },
+    {
+      "name": "Regina (Miami UGC)",
+      "platform": "Instagram",
+      "handle": "@regina_ugc_",
+      "followers": 28200,
+      "niche": ["Lifestyle"],
+      "priority": "Medium",
+      "notes": "Miami-based UGC creator. LOCAL TO COOP!"
+    },
+    {
+      "name": "Alina Antman",
+      "platform": "Instagram",
+      "handle": "@alinaantman_nyc",
+      "followers": 51800,
+      "niche": ["Lifestyle", "Gifting", "Travel"],
+      "priority": "High",
+      "notes": "Lifestyle/Beauty/Fashion/Travel. Trusted by 900+ brands worldwide. NYC based."
+    },
+    {
+      "name": "Austin and Lexi",
+      "platform": "TikTok",
+      "handle": "@austinandlexi",
+      "followers": 5400000,
+      "niche": ["Relationships", "Lifestyle"],
+      "priority": "Medium",
+      "notes": "5.4M followers. Massive couple account. May be expensive but huge reach for brand awareness."
+    },
+    {
+      "name": "Gracie",
+      "platform": "TikTok",
+      "handle": "@itsgraygracie",
+      "followers": 10000,
+      "niche": ["Lifestyle"],
+      "email": "itsgraygracie@icloud.com",
+      "priority": "Medium",
+      "notes": "Active UGC creator actively looking for brand deals. Good entry point."
+    },
+    {
+      "name": "Fox and Cactus",
+      "platform": "Instagram",
+      "handle": "@foxandcactus",
+      "followers": 49500,
+      "niche": ["Stationery"],
+      "priority": "High",
+      "notes": "Stationery brand/creator. Stickers, washi tape, planners. Australia-based but great niche fit."
+    },
+    {
+      "name": "Villa Beautifful",
+      "platform": "Instagram",
+      "handle": "@shopvillabeautifful",
+      "followers": 45900,
+      "niche": ["Stationery"],
+      "priority": "High",
+      "notes": "Pens, stickers, stationery for creative planners. Seattle-based. Perfect niche."
+    },
+    {
+      "name": "Penpal Kat",
+      "platform": "YouTube/TikTok",
+      "handle": "@penpalkat",
+      "followers": 20000,
+      "niche": ["Stationery", "Pen Pals"],
+      "priority": "High",
+      "notes": "Pen pal content creator. Makes videos about letter writing. IDEAL for Yours Truly!"
+    }
+  ],
+  "total": 10,
+  "high_priority": 7,
+  "notes": "Focus on stationery/pen pal creators first - they're the perfect niche match for handwritten cards"
+}

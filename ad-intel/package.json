@@ -1,0 +1,14 @@
+{
+  "name": "ad-intel",
+  "version": "1.0.0",
+  "description": "Automated ad intelligence and creative generation",
+  "main": "index.js",
+  "scripts": {
+    "scrape": "node scrapers/run-all.js",
+    "analyze": "node analysis/pattern-engine.js",
+    "notify": "node analysis/alert-winners.js"
+  },
+  "dependencies": {
+    "puppeteer": "^22.0.0"
+  }
+}

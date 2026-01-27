@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@notionhq/client": "^5.8.0",
+    "googleapis": "^170.1.0",
+    "nodemailer": "^7.0.12",
+    "replicate": "^1.4.0",
+    "twitter-api-v2": "^1.29.0"
+  }
+}

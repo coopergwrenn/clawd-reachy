@@ -1,0 +1,23 @@
+{
+  "yours_truly": {
+    "competitors": [
+      {"name": "Escargot", "handle": "@giftswithleo", "website": "helloescargot.com", "platforms": ["tiktok", "instagram"]},
+      {"name": "Postable", "handle": "@postable", "website": "postable.com", "platforms": ["instagram", "x"]},
+      {"name": "Punkpost", "handle": "@punkpost", "website": "punkpost.com", "platforms": ["instagram", "tiktok"]},
+      {"name": "Handwrytten", "handle": "@handwrytten", "website": "handwrytten.com", "platforms": ["instagram", "x", "tiktok"]},
+      {"name": "Simply Noted", "handle": "@simplynoted", "website": "simplynoted.com", "platforms": ["instagram", "x"]}
+    ],
+    "focus": "B2C personalized handwritten cards",
+    "track": ["social_posts", "ads", "ugc_partnerships", "engagement"]
+  },
+  "nolan": {
+    "competitors": [
+      {"name": "Descript", "handle": "@daborimba", "website": "descript.com", "platforms": ["x", "youtube", "tiktok"]},
+      {"name": "Runway", "handle": "@runwayml", "website": "runwayml.com", "platforms": ["x", "instagram", "youtube"]},
+      {"name": "CapCut", "handle": "@capcut", "website": "capcut.com", "platforms": ["tiktok", "instagram", "youtube"]},
+      {"name": "Opus Clip", "handle": "@opusclip", "website": "opus.pro", "platforms": ["x", "tiktok", "youtube"]}
+    ],
+    "focus": "AI video editing",
+    "track": ["product_updates", "social_posts", "ads", "content_trends"]
+  }
+}
