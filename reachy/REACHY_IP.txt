@@ -1,0 +1,11 @@
+# Current Reachy IP - Auto-updated
+# Use reachy-mini.local for hostname-based access (more reliable)
+
+REACHY_IP=192.168.4.86
+REACHY_HOSTNAME=reachy-mini.local
+
+# Last updated: 2026-01-28 16:30 EST
+# Previous IPs: 192.168.4.75
+
+# To always find Reachy regardless of IP:
+# ping reachy-mini.local
