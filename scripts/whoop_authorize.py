@@ -1,20 +1,29 @@
 #!/home/wrenn/clawd/scripts/venv/bin/python3
 """
-Generate Whoop OAuth authorization URL
+Generate Whoop OAuth authorization URL with proper state parameter
 """
 import json
 import urllib.parse
+import secrets
 
 # Load credentials
 with open('/home/wrenn/.secrets/whoop.json', 'r') as f:
     creds = json.load(f)
+
+# Generate secure random state
+state = secrets.token_urlsafe(32)
+
+# Save state for verification later
+with open('/tmp/whoop_oauth_state.txt', 'w') as f:
+    f.write(state)
 
 # Generate authorization URL
 params = {
     'client_id': creds['client_id'],
     'redirect_uri': creds['redirect_uri'],
     'response_type': 'code',
-    'scope': ' '.join(creds['scopes'])
+    'scope': ' '.join(creds['scopes']),
+    'state': state
 }
 
 auth_url = f"https://api.prod.whoop.com/oauth/oauth2/auth?{urllib.parse.urlencode(params)}"
