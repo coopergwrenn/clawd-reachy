@@ -37,3 +37,5 @@ build/
 tmp/
 temp/
 *.tmp
+reachy-venv/
+scripts/venv/
