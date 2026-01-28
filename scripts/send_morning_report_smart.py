@@ -99,7 +99,7 @@ Ritchie 🤖
 def send_email(to_email, subject, body):
     """Send email via Gmail SMTP"""
     try:
-        with open('/home/wrenn/clawd/gmail-credentials.json', 'r') as f:
+        with open('/home/wrenn/.secrets/gmail.json', 'r') as f:
             creds = json.load(f)
             email = creds['email']
             password = creds['app_password']

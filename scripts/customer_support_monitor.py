@@ -26,7 +26,7 @@ SUPPORT_KEYWORDS = [
 ]
 
 def load_credentials():
-    with open('/home/wrenn/clawd/gmail-credentials.json', 'r') as f:
+    with open('/home/wrenn/.secrets/gmail.json', 'r') as f:
         creds = json.load(f)
     return creds['email'], creds['app_password']
 

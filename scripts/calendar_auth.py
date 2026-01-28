@@ -14,7 +14,7 @@ SCOPES = [
     'https://www.googleapis.com/auth/gmail.readonly'
 ]
 
-CREDENTIALS_FILE = '/home/wrenn/clawd/google-oauth-credentials.json'
+CREDENTIALS_FILE = '/home/wrenn/.secrets/google-oauth.json'
 TOKEN_FILE = '/home/wrenn/clawd/google-oauth-token.json'
 
 def authenticate():

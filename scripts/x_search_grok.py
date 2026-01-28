@@ -7,7 +7,7 @@ import requests
 from datetime import datetime
 
 def load_credentials():
-    with open('/home/wrenn/clawd/xai-credentials.json', 'r') as f:
+    with open('/home/wrenn/.secrets/xai.json', 'r') as f:
         return json.load(f)
 
 def search_x_mentions():

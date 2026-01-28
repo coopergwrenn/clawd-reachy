@@ -1,6 +1,6 @@
 #!/home/wrenn/clawd/scripts/venv/bin/python3
 """
-Generate OAuth URL for manual authorization
+Generate OAuth URL for manual authorization - SECURE VERSION
 """
 import json
 from google_auth_oauthlib.flow import Flow
@@ -10,7 +10,7 @@ SCOPES = [
     'https://www.googleapis.com/auth/gmail.readonly'
 ]
 
-CREDENTIALS_FILE = '/home/wrenn/clawd/google-oauth-credentials.json'
+CREDENTIALS_FILE = '/home/wrenn/.secrets/google-oauth.json'
 
 # Create flow with manual redirect
 flow = Flow.from_client_secrets_file(

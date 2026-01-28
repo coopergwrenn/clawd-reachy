@@ -1,7 +1,7 @@
 #!/bin/bash
 # Quick X mention check using xAI Grok API
 
-XAI_KEY="xai-sUZkGRqlsZUPEJ7B8C93if63dfyw2bXkIerHIQWfVVHgiM0Oiw8YjSU5IqjqD58yaaa0cZIEji1dQDOS"
+XAI_KEY=$(python3 -c "import json; print(json.load(open('/home/wrenn/.secrets/xai.json'))['api_key'])")
 
 curl -s --max-time 30 https://api.x.ai/v1/chat/completions \
   -H "Content-Type: application/json" \

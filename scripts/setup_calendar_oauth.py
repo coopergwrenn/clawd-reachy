@@ -14,8 +14,8 @@ SCOPES = [
     'https://www.googleapis.com/auth/gmail.readonly'
 ]
 
-CREDENTIALS_FILE = '/home/wrenn/clawd/google-oauth-credentials.json'
-TOKEN_FILE = '/home/wrenn/clawd/google-calendar-token.json'
+CREDENTIALS_FILE = '/home/wrenn/.secrets/google-oauth.json'
+TOKEN_FILE = '/home/wrenn/.secrets/google-calendar.json'
 
 def main():
     creds = None

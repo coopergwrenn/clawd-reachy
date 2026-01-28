@@ -7,7 +7,7 @@ import stripe
 from datetime import datetime, timedelta
 
 def load_stripe_key():
-    with open('/home/wrenn/clawd/stripe-credentials.json', 'r') as f:
+    with open('/home/wrenn/.secrets/stripe.json', 'r') as f:
         data = json.load(f)
     return data['api_key']
 

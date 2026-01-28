@@ -7,7 +7,7 @@ import tweepy
 from datetime import datetime, timedelta
 
 def load_credentials():
-    with open('/home/wrenn/clawd/x-credentials.json', 'r') as f:
+    with open('/home/wrenn/.secrets/x-twitter.json', 'r') as f:
         creds = json.load(f)
     return creds
 

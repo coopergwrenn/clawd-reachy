@@ -1,6 +1,6 @@
 #!/home/wrenn/clawd/scripts/venv/bin/python3
 """
-Exchange OAuth code for access token
+Exchange OAuth code for access token - SECURE VERSION
 """
 import os
 import json
@@ -14,8 +14,8 @@ SCOPES = [
     'https://www.googleapis.com/auth/gmail.readonly'
 ]
 
-CREDENTIALS_FILE = '/home/wrenn/clawd/google-oauth-credentials.json'
-TOKEN_FILE = '/home/wrenn/clawd/google-calendar-token.json'
+CREDENTIALS_FILE = '/home/wrenn/.secrets/google-oauth.json'
+TOKEN_FILE = '/home/wrenn/.secrets/google-calendar.json'
 
 # Create flow
 flow = Flow.from_client_secrets_file(
@@ -25,7 +25,7 @@ flow = Flow.from_client_secrets_file(
 )
 
 # The authorization URL you got
-auth_response = 'http://localhost:8080/?state=WvRU9OopHxAdhRXxYqxtofCiHGZg2K&code=4/0ASc3gC0_atEup0qjYpOukz4CcZ3SmIdJCJ4zy4JTP2Y-VX-X9oXGR9-eVpyMiuBbNjH7bA&scope=https://www.googleapis.com/auth/gmail.readonly%20https://www.googleapis.com/auth/calendar.readonly'
+auth_response = 'http://localhost:8080/?state=5yfa2gVDe5ZHmXoh00CaDhvDKo1arV&code=4/0ASc3gC2AWpm_YfDbo2WoeCckgd3GC3eJ3dfnzhyXvrcbwfraxUR4QT1Qu-JTAtPBSqaiQw&scope=https://www.googleapis.com/auth/gmail.readonly%20https://www.googleapis.com/auth/calendar.readonly'
 
 # Exchange code for token
 flow.fetch_token(authorization_response=auth_response)
@@ -37,6 +37,8 @@ creds = flow.credentials
 with open(TOKEN_FILE, 'w') as token:
     token.write(creds.to_json())
 
+os.chmod(TOKEN_FILE, 0o600)
+
 print(f"✅ Token saved to {TOKEN_FILE}")
 
 # Test calendar access
@@ -47,5 +49,5 @@ result = service.calendarList().list().execute()
 calendars = result.get('items', [])
 
 print(f"✅ Calendar access working! Found {len(calendars)} calendars")
-for cal in calendars[:3]:
+for cal in calendars[:5]:
     print(f"  - {cal['summary']}")

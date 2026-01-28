@@ -9,7 +9,7 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 
 def load_credentials():
-    creds_path = '/home/wrenn/clawd/gmail-credentials.json'
+    creds_path = '/home/wrenn/.secrets/gmail.json'
     with open(creds_path, 'r') as f:
         creds_data = json.load(f)
     

@@ -101,7 +101,7 @@ def is_important_email(from_addr, subject):
 
 def load_credentials():
     import json
-    with open('/home/wrenn/clawd/gmail-credentials.json', 'r') as f:
+    with open('/home/wrenn/.secrets/gmail.json', 'r') as f:
         creds = json.load(f)
     return creds['email'], creds['app_password']
 
