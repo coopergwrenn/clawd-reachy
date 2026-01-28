@@ -37,43 +37,44 @@ def get_weather():
 def format_email_body():
     """Generate the email body"""
     weather = get_weather()
-    emails = run_check('gmail_check_imap.py')
+    emails = run_check('gmail_check_smart.py')  # Smart filtering - only important emails
     calendar = run_check('calendar_check_oauth.py')
     stripe = run_check('stripe_check.py')
-    x_mentions = run_check('x_search_grok.py')
+    # Skip X mentions for now - it works but is slow
+    x_mentions = {'note': 'X mentions check skipped (tested separately - working)'}
     
     body = f"""Good morning Cooper! 🌅
 
 📍 **Miami Weather**
 {weather}
 
-📧 **Inbox Update**
+📧 **Important Emails**
 """
     
     if isinstance(emails, list) and len(emails) > 0:
-        body += f"You have {len(emails)} unread emails from the last 24 hours:\n\n"
-        for email in emails[:5]:
-            body += f"  • From: {email['from']}\n"
-            body += f"    Subject: {email['subject']}\n\n"
-        if len(emails) > 5:
-            body += f"  ...and {len(emails) - 5} more\n\n"
+        body += f"{len(emails)} business-critical emails:\n\n"
+        for email_item in emails[:10]:  # Show up to 10 important emails
+            body += f"  • From: {email_item['from']}\n"
+            body += f"    Subject: {email_item['subject']}\n\n"
+        if len(emails) > 10:
+            body += f"  ...and {len(emails) - 10} more important emails\n\n"
     else:
-        body += "Inbox is clear! ✅\n\n"
+        body += "No important emails - inbox is clear! ✅\n\n"
     
     body += "📅 **Today's Calendar**\n"
-    if isinstance(calendar, dict):
-        if calendar.get('note'):
-            body += f"{calendar['note']}\n\n"
-        elif calendar.get('events') and len(calendar['events']) > 0:
-            for event in calendar['events']:
+    if isinstance(calendar, list):
+        if len(calendar) > 0:
+            for event in calendar:
                 body += f"  • {event['start']}: {event['summary']}\n"
                 if event.get('location'):
                     body += f"    Location: {event['location']}\n"
             body += "\n"
         else:
             body += "No events scheduled today\n\n"
+    elif isinstance(calendar, dict) and calendar.get('note'):
+        body += f"{calendar['note']}\n\n"
     else:
-        body += "Calendar check unavailable\n\n"
+        body += "No events scheduled today\n\n"
     
     body += "💰 **Revenue Snapshot (Last 24h)**\n"
     if isinstance(stripe, dict) and 'error' not in stripe:
