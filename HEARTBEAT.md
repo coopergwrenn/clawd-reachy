@@ -62,6 +62,24 @@ If urgent, write to `/home/wrenn/clawd/reachy/urgent_alert.txt`:
 - Short, spoken-friendly message
 - Reachy will speak it out loud + perk up to get attention
 
-## Periodic Checks (rotate through these)
-- Check Gmail for urgent customer emails
-- Monitor for partnership responses (Museum of Ice Cream, Edge City)
+## Business Partner Responsibilities (Daily)
+
+**Customer Support (Check 2-3x per day):**
+- Run customer support monitor: `/home/wrenn/clawd/scripts/customer_support_monitor.py`
+- If customer emails found, draft responses and notify Cooper
+- Log issues in `/home/wrenn/clawd/business/yours-truly/tracker.md`
+
+**Business Metrics (Once per day):**
+- Run business analytics: `/home/wrenn/clawd/scripts/business_analytics.py`
+- Update trackers if significant changes
+- Flag any revenue drops or concerning trends
+
+**Opportunity Scanning (Rotate through these):**
+- Check competitor social media for new campaigns
+- Monitor partnership email responses (Museum of Ice Cream, Edge City)
+- Search for UGC creators in personalized gifts niche
+- Check Nolan alpha feedback channels
+
+**Weekly (Sunday Evening):**
+- Generate weekly business review using template
+- Send to Cooper via Telegram summarizing wins, issues, priorities
