@@ -1,18 +1,24 @@
 # HEARTBEAT.md
 
-## Morning Email Reports (7:30am EST)
+## Morning Wake-Up & Reports (7:30am EST)
 If it's between 7:00am-8:00am EST and you haven't done a morning report today:
 
-Run the automated morning report script:
+1. **Wake up my physical body:**
+```bash
+/home/wrenn/clawd/reachy/morning_wake_up.sh
+```
+This wakes up the robot, starts vision, does wake-up animation, takes morning photo.
+
+2. **Send morning reports:**
 ```bash
 cd /home/wrenn/clawd/scripts && ./morning_reports.sh
 ```
 
 This sends two emails to coopergrantwrenn@gmail.com:
-1. **Daily Briefing** - Weather, critical emails only, calendar, Stripe revenue, X mentions
+1. **Daily Briefing** - Weather, critical emails only, calendar, Stripe revenue
 2. **Competitor Intel** - Yours Truly & Nolan competitors with search suggestions
 
-All scripts are in `/home/wrenn/clawd/scripts/` and fully automated.
+All scripts are in `/home/wrenn/clawd/scripts/` and `/home/wrenn/clawd/reachy/`.
 
 ## Ad Intelligence Scan (8:00am EST)
 If it's between 8:00am-8:30am EST and you haven't run ad intel today:
