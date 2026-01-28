@@ -37,7 +37,7 @@ def get_weather():
 def format_email_body():
     """Generate the email body"""
     weather = get_weather()
-    emails = run_check('gmail_check_smart.py')  # Smart filtering - only important emails
+    emails = run_check('gmail_check_critical.py')  # Ultra-aggressive filtering - ONLY critical
     calendar = run_check('calendar_check_oauth.py')
     stripe = run_check('stripe_check.py')
     # Skip X mentions for now - it works but is slow
@@ -48,18 +48,16 @@ def format_email_body():
 📍 **Miami Weather**
 {weather}
 
-📧 **Important Emails**
+📧 **Critical Emails Only**
 """
     
     if isinstance(emails, list) and len(emails) > 0:
-        body += f"{len(emails)} business-critical emails:\n\n"
-        for email_item in emails[:10]:  # Show up to 10 important emails
+        body += f"🚨 {len(emails)} business-critical emails that need attention:\n\n"
+        for email_item in emails:  # Show ALL critical emails
             body += f"  • From: {email_item['from']}\n"
             body += f"    Subject: {email_item['subject']}\n\n"
-        if len(emails) > 10:
-            body += f"  ...and {len(emails) - 10} more important emails\n\n"
     else:
-        body += "No important emails - inbox is clear! ✅\n\n"
+        body += "✅ No critical emails - you're good!\n\n"
     
     body += "📅 **Today's Calendar**\n"
     if isinstance(calendar, list):

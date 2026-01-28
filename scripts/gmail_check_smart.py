@@ -35,7 +35,22 @@ SKIP_SENDERS = [
     'mobbin.com',
     'bayareatimes.com',
     'skool.com',
-    'luma-mail.com'
+    'luma-mail.com',
+    'buildinglink.com',  # Building notifications
+    'opentable.com',  # Restaurant reservations
+    'yutori.com',  # Restaurant newsletter
+    'shopify.com',  # Unless it's from customer support
+    'ideabrowser.com',  # Newsletter
+    'dice.fm',  # Events
+    'buckmason.com',  # Shopping
+    'menscrafted.com',  # Shopping
+    'hardrockbet.com',  # Gambling
+    'deltaairlines.com',  # Travel marketing
+    'delta.com',  # Travel marketing
+    'morphic.com',  # Unless directly relevant
+    'se.ro',  # Newsletter
+    'opusclip.com',  # Unless from their team directly
+    'email.shopify.com'  # Shopify marketing
 ]
 
 # Keywords that indicate IMPORTANT business emails
@@ -77,11 +92,11 @@ def is_important_email(from_addr, subject):
         if keyword in subject_lower or keyword in from_lower:
             return True
     
-    # If sender is from a company domain (not gmail/yahoo/etc), might be important
-    if not any(common in from_lower for common in ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com']):
-        # Could be a business contact
+    # If it's from a personal email (gmail/yahoo/etc), more likely to be important
+    if any(common in from_lower for common in ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'me.com', 'icloud.com']):
         return True
     
+    # Otherwise skip - most company emails are marketing
     return False
 
 def load_credentials():
