@@ -3,29 +3,16 @@
 ## Morning Email Reports (7:30am EST)
 If it's between 7:00am-8:00am EST and you haven't done a morning report today:
 
-**Send to: coopergrantwrenn@gmail.com**
+Run the automated morning report script:
+```bash
+cd /home/wrenn/clawd/scripts && ./morning_reports.sh
+```
 
-### Email 1: Daily Briefing
-- Weather in Miami (quick: temp, conditions)
-- Gmail inbox: Urgent/important emails from last 24h
-- Calendar: What's on today
-- Today's priorities: Based on calendar + context, suggest focus areas
-- Social mentions: Check if anyone tagged @coopwrenn or Yours Truly
-- Revenue snapshot: Quick Stripe balance + recent activity
+This sends two emails to coopergrantwrenn@gmail.com:
+1. **Daily Briefing** - Weather, critical emails only, calendar, Stripe revenue, X mentions
+2. **Competitor Intel** - Yours Truly & Nolan competitors with search suggestions
 
-### Email 2: Competitor Intel
-**Yours Truly competitors** (Escargot, Postable, Punkpost, Handwrytten, Simply Noted):
-- New social posts (TikTok, IG, X)
-- New ads (Meta Ad Library, TikTok)
-- UGC partnerships spotted
-- What's getting engagement
-- Quick bullets + links
-
-**Nolan competitors** (Descript, Runway, CapCut, Opus Clip):
-- Same format
-- Focus on product updates, content trends
-
-**Actionable insight:** "Consider posting X based on what's working"
+All scripts are in `/home/wrenn/clawd/scripts/` and fully automated.
 
 ## Ad Intelligence Scan (8:00am EST)
 If it's between 8:00am-8:30am EST and you haven't run ad intel today:
