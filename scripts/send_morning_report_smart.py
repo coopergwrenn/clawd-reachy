@@ -57,6 +57,7 @@ def generate_smart_report():
     emails = run_check('gmail_check_critical.py')
     calendar = run_check('calendar_check_oauth.py')
     stripe = run_check('stripe_check.py')
+    whoop = run_check('whoop_get_latest.py')
     
     # Build context for GLM
     context = f"""Today's Business Data for Cooper (Yours Truly, Nolan, Blot):
@@ -73,14 +74,20 @@ Revenue (last 24h): ${stripe.get('total_revenue', 0):.2f}
 Available balance: ${stripe.get('available_balance', 0):.2f}
 New customers: {stripe.get('new_customers', 0)}
 
+Whoop Health Data: {json.dumps(whoop.get('latest_recovery', {})) if whoop and whoop.get('latest_recovery') else 'Not available yet'}
+Whoop Sleep: {json.dumps(whoop.get('latest_sleep', {})) if whoop and whoop.get('latest_sleep') else 'Not available yet'}
+
 Generate a concise, actionable morning briefing email. Include:
 1. Weather context
-2. Critical email summary (only if urgent)
-3. Calendar highlights
-4. Revenue insight
-5. One clear priority for today
+2. Health status (if Whoop data available: recovery score, sleep performance)
+3. Critical email summary (only if urgent)
+4. Calendar highlights
+5. Revenue insight
+6. One clear priority for today based on health + calendar
 
-Keep it under 200 words. Be direct and businesslike."""
+If health data shows low recovery, suggest easier tasks. If high recovery, push for high-impact work.
+
+Keep it under 250 words. Be direct and businesslike."""
 
     # Get intelligent summary from GLM
     smart_summary = call_glm(context)
