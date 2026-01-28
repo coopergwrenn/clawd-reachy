@@ -10,9 +10,9 @@ cd "$SCRIPTS_DIR"
 echo "🌅 Starting morning reports..."
 echo ""
 
-# 1. Send daily briefing
-echo "📊 Generating daily briefing..."
-./send_morning_report.py
+# 1. Send daily briefing (using FREE local GLM-4)
+echo "📊 Generating daily briefing with GLM-4 (local, $0)..."
+./send_morning_report_smart.py
 
 echo ""
 echo "🔍 Generating competitor intel..."
