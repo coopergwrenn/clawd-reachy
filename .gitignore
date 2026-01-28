@@ -39,3 +39,17 @@ temp/
 *.tmp
 reachy-venv/
 scripts/venv/
+
+# Secrets directory (NEVER commit)
+/home/wrenn/.secrets/
+../.secrets/
+~/.secrets/
+
+# Any credential files anywhere
+*-credentials.json
+*credentials.json
+*-token.json
+*token.json
+*.pem
+*.key
+*.secret
