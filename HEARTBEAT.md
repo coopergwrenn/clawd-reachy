@@ -59,6 +59,12 @@ If it's Sunday and between 7:30pm-8:30pm EST and you haven't done a weekly repor
 - PostHog: WAU, retention, traffic trends
 - Send combined summary via Telegram
 
+## Reachy Demo Photo Trigger
+Check `/home/wrenn/clawd/reachy/send_photo_now.txt` - if it exists:
+1. Take fresh snapshot from Reachy camera  
+2. Send to Telegram
+3. Delete the trigger file
+
 ## Periodic Checks (rotate through these)
 - Check Gmail for urgent customer emails
 - Monitor for partnership responses (Museum of Ice Cream, Edge City)
