@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clawd - All States</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #3d405b;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .state-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .face {
+      width: 140px;
+      height: 120px;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      position: relative;
+    }
+
+    .eyes {
+      display: flex;
+      gap: 30px;
+    }
+
+    .eye {
+      background: #3d405b;
+      transition: all 0.3s ease;
+    }
+
+    .label {
+      font-size: 16px;
+      font-weight: 600;
+      color: #3d405b;
+    }
+
+    .emoji {
+      font-size: 24px;
+    }
+
+    /* Sleeping */
+    .sleeping { background: #e07a5f; }
+    .sleeping .eye {
+      width: 24px;
+      height: 5px;
+      border-radius: 3px;
+    }
+    .sleeping .zzz {
+      position: absolute;
+      top: -15px;
+      right: 5px;
+      font-size: 20px;
+    }
+
+    /* Idle */
+    .idle { background: #e07a5f; }
+    .idle .eye {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+    }
+
+    /* Happy */
+    .happy { background: #81b29a; }
+    .happy .eye {
+      width: 20px;
+      height: 10px;
+      border-radius: 10px 10px 0 0;
+      background: transparent;
+      border: 4px solid #3d405b;
+      border-bottom: none;
+    }
+
+    /* Working */
+    .working { background: #f2cc8f; }
+    .working .eye {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      animation: pulse 1s ease-in-out infinite;
+    }
+    .working .eye:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+    }
+
+    /* Thinking */
+    .thinking { background: #a8dadc; }
+    .thinking .eye:first-child {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+    }
+    .thinking .eye:last-child {
+      width: 20px;
+      height: 5px;
+      border-radius: 3px;
+    }
+
+    /* Surprised */
+    .surprised { background: #f4a261; }
+    .surprised .eye {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+    }
+
+    /* Sad */
+    .sad { background: #457b9d; }
+    .sad .eye {
+      width: 16px;
+      height: 8px;
+      border-radius: 0 0 8px 8px;
+      transform: translateY(4px);
+    }
+
+    /* Excited */
+    .excited { background: #e9c46a; }
+    .excited .eye {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      animation: sparkle 0.6s ease-in-out infinite;
+    }
+    @keyframes sparkle {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    /* Love */
+    .love { background: #e07a5f; }
+    .love .eye {
+      width: 18px;
+      height: 16px;
+      background: #c1121f;
+      border-radius: 50% 50% 50% 50%;
+      transform: rotate(-45deg);
+      position: relative;
+    }
+    .love .eye::before,
+    .love .eye::after {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 16px;
+      background: #c1121f;
+      border-radius: 50%;
+    }
+    .love .eye::before {
+      top: -8px;
+      left: 0;
+    }
+    .love .eye::after {
+      left: 8px;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>✨ Clawd's Moods ✨</h1>
+  
+  <div class="grid">
+    <div class="state-card">
+      <div class="face sleeping">
+        <span class="zzz">💤</span>
+        <div class="eyes">
+          <div class="eye"></div>
+          <div class="eye"></div>
+        </div>
+      </div>
+      <div class="label"><span class="emoji">😴</span> Sleeping</div>
+    </div>
+
+    <div class="state-card">
+      <div class="face idle">
+        <div class="eyes">
+          <div class="eye"></div>
+          <div class="eye"></div>
+        </div>
+      </div>
+      <div class="label"><span class="emoji">👀</span> Idle</div>
+    </div>
+
+    <div class="state-card">
+      <div class="face happy">
+        <div class="eyes">
+          <div class="eye"></div>
+          <div class="eye"></div>
+        </div>
+      </div>
+      <div class="label"><span class="emoji">😊</span> Happy</div>
+    </div>
+
+    <div class="state-card">
+      <div class="face working">
+        <div class="eyes">
+          <div class="eye"></div>
+          <div class="eye"></div>
+        </div>
+      </div>
+      <div class="label"><span class="emoji">⚙️</span> Working</div>
+    </div>
+
+    <div class="state-card">
+      <div class="face thinking">
+        <div class="eyes">
+          <div class="eye"></div>
+          <div class="eye"></div>
+        </div>
+      </div>
+      <div class="label"><span class="emoji">🤔</span> Thinking</div>
+    </div>
+
+    <div class="state-card">
+      <div class="face surprised">
+        <div class="eyes">
+          <div class="eye"></div>
+          <div class="eye"></div>
+        </div>
+      </div>
+      <div class="label"><span class="emoji">😮</span> Surprised</div>
+    </div>
+
+    <div class="state-card">
+      <div class="face sad">
+        <div class="eyes">
+          <div class="eye"></div>
+          <div class="eye"></div>
+        </div>
+      </div>
+      <div class="label"><span class="emoji">😢</span> Sad</div>
+    </div>
+
+    <div class="state-card">
+      <div class="face excited">
+        <div class="eyes">
+          <div class="eye"></div>
+          <div class="eye"></div>
+        </div>
+      </div>
+      <div class="label"><span class="emoji">🤩</span> Excited</div>
+    </div>
+  </div>
+</body>
+</html>

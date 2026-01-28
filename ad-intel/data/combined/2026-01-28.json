@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-01-28T15:18:05.251Z",
+  "sources": {
+    "facebook": {
+      "error": "Failed to launch the browser process!\n/home/wrenn/.cache/puppeteer/chrome/linux-127.0.6533.88/chrome-linux64/chrome: 1: Syntax error: \"(\" unexpected\n\n\nTROUBLESHOOTING: https://pptr.dev/troubleshooting\n"
+    },
+    "tiktok": {
+      "error": "Failed to launch the browser process!\n/home/wrenn/.cache/puppeteer/chrome/linux-127.0.6533.88/chrome-linux64/chrome: 1: Syntax error: \"(\" unexpected\n\n\nTROUBLESHOOTING: https://pptr.dev/troubleshooting\n"
+    }
+  }
+}

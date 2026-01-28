@@ -65,6 +65,16 @@ Check `/home/wrenn/clawd/reachy/send_photo_now.txt` - if it exists:
 2. Send to Telegram
 3. Delete the trigger file
 
+## Urgent Alerts (for Reachy to speak)
+Check for urgent items that need Cooper's attention:
+- Gmail: Urgent/important emails from last 3 hours
+- Calendar: Events starting in next 2 hours
+- Mentions: Important @mentions on X or other platforms
+
+If urgent, write to `/home/wrenn/clawd/reachy/urgent_alert.txt`:
+- Short, spoken-friendly message
+- Reachy will speak it out loud + perk up to get attention
+
 ## Periodic Checks (rotate through these)
 - Check Gmail for urgent customer emails
 - Monitor for partnership responses (Museum of Ice Cream, Edge City)
