@@ -92,3 +92,24 @@ bash /home/wrenn/clawd/reachy/demo_monitor.sh
 ### Transcriptions not appearing
 - Check transcription server: `curl http://localhost:8777/`
 - Check heard.txt: `tail /home/wrenn/clawd/reachy/heard.txt`
+
+## Updated Architecture (v2 - Using Bridge)
+
+**Key Improvement:** Single unified bridge service on Reachy eliminates connection conflicts!
+
+### Reachy Bridge Service
+The `reachy_bridge.py` runs on Reachy and provides:
+- HTTP endpoint for audio playback (`/play/<num>`)
+- Background listening thread (sends to DGX transcription)
+- Single ReachyMini connection (no conflicts!)
+
+### Setup v2
+1. Start transcription server on DGX (in tmux)
+2. Start reachy_bridge.py on Reachy
+3. Start simple_monitor.py on DGX (in tmux)
+
+### Speed Optimizations
+- 1-second audio chunks (faster detection)
+- faster-whisper (4-5x speed boost)
+- HTTP bridge (no SSH overhead)
+- Threading (non-blocking responses)

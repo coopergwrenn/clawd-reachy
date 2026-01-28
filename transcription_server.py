@@ -14,14 +14,14 @@ sys.path.insert(0, '/home/wrenn/clawd/reachy-venv/lib/python3.12/site-packages')
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 import uvicorn
-import whisper
+from faster_whisper import WhisperModel
 
 app = FastAPI(title="Clawd Transcription Server")
 
-# Load Whisper model (use "tiny" for speed, "base" for better accuracy)
-print("Loading Whisper model...")
-model = whisper.load_model("base")
-print("✅ Whisper ready")
+# Load faster-whisper (4-5x faster than standard Whisper!)
+print("Loading faster-whisper tiny model...")
+model = WhisperModel("tiny", device="cpu", compute_type="int8")
+print("✅ faster-whisper ready")
 
 # File to write transcriptions (Clawd can monitor this)
 TRANSCRIPT_FILE = "/home/wrenn/clawd/reachy/heard.txt"
@@ -46,9 +46,9 @@ async def transcribe(data: dict):
             f.write(audio_bytes)
             temp_path = f.name
         
-        # Transcribe
-        result = model.transcribe(temp_path, language="en")
-        text = result.get("text", "").strip()
+        # Transcribe with faster-whisper
+        segments, info = model.transcribe(temp_path, language="en", beam_size=1, vad_filter=True)
+        text = " ".join([seg.text for seg in segments]).strip()
         
         # Clean up
         os.unlink(temp_path)

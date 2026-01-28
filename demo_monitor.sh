@@ -13,7 +13,6 @@ while true; do
         sleep 2
         ssh pollen@192.168.4.75 '/venvs/apps_venv/bin/python /tmp/play_response.py 1'
         python3 /home/wrenn/clawd/reachy/animations.py happy &
-        > "$HEARD"
     fi
     
     # Q2: see me
@@ -22,7 +21,6 @@ while true; do
         echo "Q2: $TEXT"
         ssh pollen@192.168.4.75 '/venvs/apps_venv/bin/python /tmp/play_response.py 2' &
         python3 /home/wrenn/clawd/reachy/animations.py look &
-        > "$HEARD"
         echo "PHOTO_READY"
     fi
     
@@ -32,7 +30,6 @@ while true; do
         echo "Q3: $TEXT"
         ssh pollen@192.168.4.75 '/venvs/apps_venv/bin/python /tmp/play_response.py 3' &
         python3 /home/wrenn/clawd/reachy/animations.py wiggle &
-        > "$HEARD"
     fi
     
     # Q4: how does it feel / body
@@ -41,7 +38,6 @@ while true; do
         echo "Q4: $TEXT"
         ssh pollen@192.168.4.75 '/venvs/apps_venv/bin/python /tmp/play_response.py 4' &
         python3 /home/wrenn/clawd/reachy/animations.py think &
-        > "$HEARD"
         sleep 20
         echo "DEMO_COMPLETE"
         exit 0
